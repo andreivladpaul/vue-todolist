@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slider</title>
+    <title>To do list</title>
 </head>
 <body>
     <div id="root" class="container">
@@ -14,16 +14,19 @@
             <img src="https://www.boolean.careers/images/misc/logo.png" alt="Logo Boolean">
         </div>
         <div class="new-todo">
-            <input v-model="newToDo"type="text" placeholder="New Task" @keyUp.enter="addToDo">
-            <button @click="addToDo">Aggiungi</button>
+            <input v-model="newTask"type="text" placeholder="New Task" @keyUp.enter="addTask">
+            <button @click="addTask">Aggiungi</button>
         </div>
-        <div v-if="toDos.length > 0" class="elenco">
-                <div class="item" v-for="(toDo,index) in toDos">
-                    <p>{{toDo}}</p>
-                    <div>
-                        <i class="fas fa-times" @click="removeToDo(index)"></i>
-                    </div>
+        <div class="elenco" v-if="tasks.length > 0" >
+                <!-- ITEM -->
+                <div class="item" v-for="(task,index) in tasks" >
                     
+                    <p class="text-item" @click="e => e.target.classList.toggle('active')" >
+                        {{task.title}}
+                    </p>
+                    <div>
+                        <i class="far fa-trash-alt hvr-grow" @click="removeTask(index)"></i>
+                    </div>
                 </div>
                 
         </div>

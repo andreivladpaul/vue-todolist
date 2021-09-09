@@ -1,7 +1,7 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 .container {
@@ -62,32 +62,56 @@ button:active {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    
-  
+
 }
 .elenco .item {
     width: 90%;
     margin: 0 auto;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid grey;
-    padding: 10px;
+    
 }
-
-.elenco .item i {
+.item .text-item {
     cursor: pointer;
-    font-size: 24px;
-    transition: all 0.2 ease-in;
+    width: 100%;
+    padding: 5px;
 }
-.elenco .item i:hover {
-    color: red;
+.active {
+    background-color: rgb(47, 155, 94);
+    border-radius: 5px;
+    padding: 5px;
 }
-.elenco .item i:active {
-    transform: scale(0.9);
-}
-
-
 h2 {
     text-align: center;
     margin-top: 20px;
 }
+
+.fa-trash-alt {
+    cursor: pointer;
+    font-size: 24px;
+    transition: all 0.2 ease-in;
+    padding: 5px;
+}
+.fa-trash-alt:active {
+    transform: scale(0.9);
+}
+
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    
+  }
+  .hvr-grow:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    color: rgb(56, 56, 88);
+  }

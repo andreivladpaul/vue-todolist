@@ -1,5 +1,4 @@
-/* Stampiamo i numeri da 1 a 100 tramite la direttiva v-for
-BONUS: stampare solo i numeri pari */
+
 Vue.config.devtools = true;
 
 const app = new Vue({

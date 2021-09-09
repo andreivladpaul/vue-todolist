@@ -1,29 +1,44 @@
-/* Stampiamo i numeri da 1 a 100 tramite la direttiva v-for
-BONUS: stampare solo i numeri pari */
+/* BONUS:
+modificare la struttura dell'array dei todos. Da array di stringhe diventa array di oggetti:
+
+Con la proprietà done colorare in verde gli <li> di tasks  che sono stati svolti, in rosso gli <li> con tasks non ancora svolti.
+Al click su un <li> potremo infine modificare la proprietà done, portandola a false se era precedentemente a true e viceversa. */
+
+
 Vue.config.devtools = true;
 
 const app = new Vue({
     el : '#root',
     
     data : {
-        newToDo: "",
-        toDos: [
-            'fare la spesa',
-            'fare compiti',
-            'fare bucato'
+        newTask: "",
+        
+        tasks: [
+            {
+                title: 'Fare spesa',
+                done: false
+            },
+            {
+                title: 'Fare compiti',
+                done: false
+            },
+            {
+                title: 'Fare bucato',
+                done: false
+            }
         ]
         
     },
     methods: {
-        addToDo() {
-            if(this.newToDo != '') {
-                this.toDos.push(this.newToDo);
-                this.newToDo = ''
+        addTask() {
+            if(this.newTask != '') {
+                this.tasks.push({title: this.newTask, done: false});
+                this.newTask = ''
             }
             
         },
-        removeToDo(index) {
-            this.toDos.splice(index,1)
+        removeTask(index) {
+            this.tasks.splice(index,1)
         }
     },
 
