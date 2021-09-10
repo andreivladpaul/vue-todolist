@@ -12,6 +12,8 @@ const app = new Vue({
     
     data : {
         newTask: "",
+        true: 'green',
+        false: 'red',
         
         tasks: [
             {
@@ -39,6 +41,9 @@ const app = new Vue({
         },
         removeTask(index) {
             this.tasks.splice(index,1)
+        },
+        changeColor(element,i) {
+            this.tasks[i].done = !this.tasks[i].done;
         }
     },
 

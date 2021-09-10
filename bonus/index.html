@@ -19,14 +19,13 @@
         </div>
         <div class="elenco" v-if="tasks.length > 0" >
                 <!-- ITEM -->
-                <div class="item" v-for="(task,index) in tasks" >
+                <div class="item" v-for="(task,index) in tasks" :class="(task.done == true) ? 'green' : 'red' "  >
                     
-                    <p class="text-item" @click="e => e.target.classList.toggle('active')" >
-                        {{task.title}}
-                    </p>
+                    <p class="text-item" @click="changeColor(task,index)">{{task.title}}</p>
                     <div>
                         <i class="far fa-trash-alt hvr-grow" @click="removeTask(index)"></i>
                     </div>
+
                 </div>
                 
         </div>

@@ -55,6 +55,17 @@ button:active {
     color: #fff;
     transform: scale(0.9);
 }
+.green {
+    background-color: rgb(47, 155, 94);
+    border-radius: 5px;
+    padding: 5px;
+}
+.red {
+    background-color: rgb(177, 39, 39);
+    border-radius: 5px;
+    padding: 5px;
+    color:#fff
+}
 .elenco {
     margin-top: 10px;
     border-radius: 20px;
@@ -79,9 +90,7 @@ button:active {
     padding: 5px;
 }
 .active {
-    background-color: rgb(47, 155, 94);
-    border-radius: 5px;
-    padding: 5px;
+    
 }
 h2 {
     text-align: center;
